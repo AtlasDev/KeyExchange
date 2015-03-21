@@ -8,13 +8,13 @@ def isPrime(p):
 def getPrime():
     isFound = False;
     while not isFound:
-        r = random.randint(1000000, 9999999);
+        r = random.randint(10000, 99999);
         if isPrime(r):
             return r;
 
 def calcKey(g, pk, p):
     startTime = int(round(time.time() * 1000));
-    key = long(g ** pk) % p
+    key = long(g ** pk) % p;
     endTime = int(round(time.time() * 1000)) - startTime;
     print("Key calculation took %s milliseconds." % endTime);
     logging.info("Key calculation took %s milliseconds." % endTime);
