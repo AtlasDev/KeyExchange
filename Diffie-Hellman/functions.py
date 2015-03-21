@@ -1,4 +1,4 @@
-import random, math, time
+import random, math, time, logging
 
 def isPrime(p):
     if(p==2): return True
@@ -13,8 +13,9 @@ def getPrime():
             return r;
 
 def calcKey(g, pk, p):
-	startTime = int(round(time.time() * 1000));
-	key = long(g ** pk) % p
-	endTime = int(round(time.time() * 1000)) - startTime;
-	print "Key calculation took ", endTime, " milliseconds.";
-	return key;
+    startTime = int(round(time.time() * 1000));
+    key = long(g ** pk) % p
+    endTime = int(round(time.time() * 1000)) - startTime;
+    print("Key calculation took %s milliseconds." % endTime);
+    logging.info("Key calculation took %s milliseconds." % endTime);
+    return key;
