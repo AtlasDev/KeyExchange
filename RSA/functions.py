@@ -33,34 +33,35 @@ def getCoprime(number):
             return r;
 
 def calcC(multiply, power, modulus):
-    hugeStepLog2 = 32
-    hugeStep = 2 ** hugeStepLog2
-    hugeMultiply = multiply
-    for i in range(hugeStepLog2):
-        hugeMultiply = (hugeMultiply * hugeMultiply) % modulus
+    return long(pow(multiply,power,modulus));
+    # hugeStepLog2 = 32
+    # hugeStep = 2 ** hugeStepLog2
+    # hugeMultiply = multiply
+    # for i in range(hugeStepLog2):
+        # hugeMultiply = long(pow(hugeMultiply,hugeMultiply,modulus))
 
-    largeStepLog2 = 16
-    largeStep = 2 ** largeStepLog2
-    largeMultiply = multiply
-    for i in range(largeStepLog2):
-        largeMultiply = (largeMultiply * largeMultiply) % modulus
+    # largeStepLog2 = 16
+    # largeStep = 2 ** largeStepLog2
+    # largeMultiply = multiply
+    # for i in range(largeStepLog2):
+        # largeMultiply = long(pow(largeMultiply,largeMultiply,modulus))
 
-    output = 1
-    i = 0
+    # output = 1
+    # i = 0
 
-    while i + hugeStep <= power:
-        i += hugeStep
-        output = (output * hugeMultiply) % modulus
+    # while i + hugeStep <= power:
+        # i += hugeStep
+        # output = long(pow(output,hugeMultiply,modulus))
 
-    while i + largeStep <= power:
-        i += largeStep
-        output = (output * largeMultiply) % modulus
+    # while i + largeStep <= power:
+        # i += largeStep
+        # output = long(pow(output,largeMultiply,modulus))
 
-    while i < power:
-        i += 1
-        output = (output * multiply) % modulus
+    # while i < power:
+        # i += 1
+        # output = long(pow(output,multiply,modulus))
 
-    return output    
+    # return output    
 
 def log(loc, msg):
     print(loc + " | " + msg);
