@@ -8,7 +8,8 @@ def isPrime(p):
 def getPrime():
     isFound = False;
     while not isFound:
-        r = random.randint(100000, 999999);
+        keyLength = 309;
+        r = random.randint(10**(keyLength-1), 10**keyLength - 1);
         if isPrime(r):
             return r;
 
